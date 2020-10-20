@@ -1,0 +1,4 @@
+.DS_Store
+Blog/.DS_Store
+Blog/db.sqlite3
+Blog/Blog/.env
