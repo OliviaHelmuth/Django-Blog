@@ -1,1 +1,1 @@
-web: gunicorn Blog.wsgi
+web: cd Blog && gunicorn Blog.wsgi
