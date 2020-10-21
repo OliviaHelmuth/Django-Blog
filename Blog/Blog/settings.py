@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os, environ, django_heroku
+import dj_database_url
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -35,6 +37,7 @@ ALLOWED_HOSTS = ['olivia-helmuth-django-blog.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'crispy_forms',
     'users_app.apps.UsersAppConfig',
     'blog_app.apps.BlogAppConfig',
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Blog.urls'
@@ -142,4 +146,4 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
