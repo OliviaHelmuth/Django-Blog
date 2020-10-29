@@ -16,6 +16,7 @@ a simple Blog with following functionalities:
 * Postgresql
 * Bootstrap
 * Crispy Forms
+* Cloudinary for picture storage
 
 ## Setup
 ``` shell
