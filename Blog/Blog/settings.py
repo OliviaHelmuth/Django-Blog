@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary,
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,13 @@ DATABASES = {
         'HOST': env('DATABASE_HOST'),
     }
 }
+
+cloudinary.config(
+  cloud_name = env('CLOUD_NAME'),
+  api_key = env('API_KEY'),
+  api_secret = env('API_SECRET'),
+  secure = True
+)
 
 
 # Password validation
