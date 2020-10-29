@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 # from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, AvatarUploadForm
+from .forms import UserRegisterForm, UserUpdateForm, AvatarUploadForm
+# ProfileUpdateForm
 
 # messages.debug
 # messages.info
@@ -43,7 +44,7 @@ def profile(request):
 
     else:
         u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
+        p_form = AvatarUploadForm(instance=request.user.profile)
 
     context = {
         'u_form': u_form,
